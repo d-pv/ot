@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	    <meta name="mobile-web-app-capable" content="yes">
+		<title>OTs</title>
+		
+		<link rel="apple-touch-icon" sizes="57x57" href="https://www.asempyme.com/viejo/ot/fav/apple-icon-57x57.png">
+		<link rel="apple-touch-icon" sizes="60x60" href="https://www.asempyme.com/viejo/ot/fav/apple-icon-60x60.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="https://www.asempyme.com/viejo/ot/fav/apple-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="https://www.asempyme.com/viejo/ot/fav/apple-icon-76x76.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="https://www.asempyme.com/viejo/ot/fav/apple-icon-114x114.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="https://www.asempyme.com/viejo/ot/fav/apple-icon-120x120.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="https://www.asempyme.com/viejo/ot/fav/apple-icon-144x144.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="https://www.asempyme.com/viejo/ot/fav/apple-icon-152x152.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="https://www.asempyme.com/viejo/ot/fav/apple-icon-180x180.png">
+		<link rel="icon" type="image/png" sizes="192x192"  href="https://www.asempyme.com/viejo/ot/fav/android-icon-192x192.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="https://www.asempyme.com/viejo/ot/fav/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="96x96" href="https://www.asempyme.com/viejo/ot/fav/favicon-96x96.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="https://www.asempyme.com/viejo/ot/fav/favicon-16x16.png">
+		<link rel="manifest" href="https://www.asempyme.com/viejo/ot/fav/manifest.json">
+		<meta name="msapplication-TileColor" content="#0c7ca8">
+		<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+		<meta name="theme-color" content="#0c7ca8">
+		
+		<style>
+			*{
+				box-sizing:border-box;
+			}
+			body{
+				font-family: sans-serif;
+				margin:0;
+				padding:0;
+				background-color:#000;
+			}
+			#entrada{
+				padding: 20px 10px 20px 10px;
+				text-align: center;
+				left:0;
+				top:0;
+				width: 100%;
+				position: fixed;
+				height: 80px;
+				background-color: rgba(0,0,0,0.75);
+				box-shadow: 0 5px 5px rgba(0,0,0,0.2);
+				z-index: 100;
+			}
+			#contenedor{
+				postion: absolute;
+				left:0;
+				margin-top: 90px;
+				z-index: 10;
+			}
+			input, button{
+				width: calc(100% - 110px);
+				max-width: 500px;
+				/*font-size: 32px;*/
+				margin-left: 5px;
+				margin-right: 5px;
+				border-radius:10px;
+				border:0;
+				height: 40px;
+			}
+			input{
+				padding: 10px;
+				margin-left:0;
+			}
+			button{
+			    width: 40px;
+			    max-width: 125px;
+				background-color: rgb(4,181,135);
+				color: #eeeeee;
+				cursor: pointer;
+				font-size: 1.25em;
+			}
+			button:nth-last-child(1){
+			    margin-right:0;
+			}
+			button:hover{
+				background-color: rgb(4,187,191);
+			}
+			.separador{
+				width:100%;
+				height: 10px;
+				border-top: 1px solid rgba(0,0,0,0.4);
+			}
+			.proyecto{
+				margin: 10px;
+				padding: 0;
+				/*border: 1px solid rgba(0,0,0,0.4);*/
+				border-radius: 10px;
+				box-shadow: 0 1px 1px 0 rgba(0,0,0,0.2), 0 1px 3px 1px rgba(0,0,0,0.1);
+				background-color: #eeeeee;
+				color: #333333;
+			}
+			.parrafo{
+				margin-top:0;
+				margin-bottom:0;
+				padding: 10px;
+				min-height: 40px;
+				border-bottom: 1px solid rgba(0,0,0,0.05);
+				width: 100%;
+			}
+			.parrafo:nth-child(even){
+				background-color: rgba(0,0,0,0.05);
+			}
+			.parrafo:nth-child(1){
+				/*background-color: rgb(91,202,159);*/
+				background-color: rgb(12,123,168);
+				border: none;
+				color: white;
+				font-size: 1.2em;
+				border-radius: 10px 10px 0 0;
+				cursor:pointer;
+				position: relative;
+			}
+			.parrafo:nth-child(1):hover{
+				background-color: rgb(13,133,181);
+			}
+			.small{
+				font-size:0.6em;
+			}
+			.small>span{
+				padding-left:15px;
+			}
+			.borde-abajo{
+				border-radius: 10px !important;
+			}
+			.transp{
+				opacity:66%;
+			}
+			.float-right{
+				position: absolute;
+				float: right;
+				text-align: right;
+				font-size: 1.5em;
+				width: 60px;
+				right: 10px;
+				top: 2px;
+			}
+			.float-left{
+				width: 80%;
+			}
+			.error{
+			    color: #eeeeee;
+			    padding: 20px;
+			}
+			
+		</style>
+		<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+	</head>
+	
+	<body>
+		<div id="entrada">
+			<input type="text" value="" list="lista-proyectos" id="caja-buscar"/>
+				<datalist id="lista-proyectos">
+				</datalist>
+			<button onclick="limpiar()"><i class="fa fa-trash"></i></button>
+			<button onclick="busqueda()"><i class="fa fa-search"></i></button>
+		</div>
+		<div id="contenedor"></div>
+		
+		<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+		<script>
+		$( document ).ready(function() {
+			DATOS = [
+            	['Proyectos','Categoría','Nombre completo','Resumen','Topic','Action','Deadline convocatoria','OT','Inicio','Fin','¿Quién preparó la propuesta?','¿Cuánto costó la propuesta?','Finalizado 1 = Fin -1=No Inicio','Presupuesto aprobado','Número socios','% socio','Coordinador / Líder','Lista socios','Presupuesto Cobra','% Presupuesto Cobra','Subvención Cobra Fondo perdido','% Subv','Préstamo Cobra','Organismo','Caja Final Estimada Inicialmente','Caja a 30-octubre-2019','Caja final esperada a 30-octubre-2019','Margen Ganado Final - Inicial','Beneficio final con respecto a subvención','Objetivo','Notas'],
+            	['APT','Solar','','Analisis Parabolic Trough','','','','','42186','42248','','','1','','','','COBRA','','','','','','','Interno','','','','','0','Comparativa Colectores Cilindro-Parabólicos mercado','Se hace el estudio en horas de personal de T&I para tener comparativa de cara a ofertas futuras.'],
+            	['Lazo de Sales','Solar','','Lazo parabolic trough (TCP-200) de sales fundidas','','','','','41030','42461','','','1','2607838','','','COBRA','','2607838','1','236270.12','9.05999989263137E-02','1338864','CDTI','','','','','0','Colector Cilindro-Parabólico con sales fundidas',''],
+            	['HYSOL','Hibridación','HYbrid Concentrated SOLar plants','','','','','32920008','41579','42552','','','1','9254362.4','','','COBRA','','4180276.4','0.451708742246792','2336938.2','0.559039158271927','','EC - FP7','','','','','0','Equipo planta híbrida GT + Sales fundidas',''],
+            	['BESOS','Sistema Eléctrico','Building Energy decision support for Smart Cities','','','','','32925193','41548','42614','','','1','4610538','','','','','322200','6.98833845421077E-02','171501','0.532281191806331','','EC - FP7','','','','','0','Gestión de infraestructuras públicas, interacción con usuarios (info y decisión) para promover sostenibilidad y eficiencia.',''],
+            	['CORALES','Solar','','Análisis corrosión sales','','','','','39934','42705','','','1','','','','','','','','','','','','','','','','0','Evaluación de la compatibilidad de distintos tipos de sales fundidas con los materiales estructurales utilizados en sistema de almacenamiento de sales y los intercambiadores.',''],
+            	['Heliostato','Solar','','Análisis de helisotatos para torres','','','','','42156','42461','','','1','339000','','','COBRA','','','0','','','','Interno','','','','','0','Nuevo heliostato con mayor superficie y accinamiento hidráulico',''],
+            	['SFOptSW','Solar','Solar Field OPTimization SoftWare','Sistema de simulación de campo solar y receptor de torre termosolar, pagado con OT de TONOPAH','','','','','42156','42552','','','1','','','','COBRA','','','','','','','Interno','','','','','0','Se contrató a CENER por 256,257.45 € para disponer de un software que permitiese calcular con precisión el campo solar de Tonopah','Pagado con la cuenta de Tonopah'],
+            	['TELWIND','Eólica Offshore','Telescopic structure for floating wind offshore','','','','','32920065','42370','43586','','','1','3498530','','','','','108875','3.11202133467485E-02','108875','1','','EC H2020','758','12019.64','12019.64','11261.64','0.110398530424799','Estructura flotante para turbinas eólicas >10MW. Solución integrada torre-subestructura. Torre telescópica, semi spar con péndulo.',''],
+            	['GRIDSOL','Hibridación','Smart Renewable hubs for flexible Generation: SOLar GRID Stability','','','','','32920036','42644','43709','INNCOME','19368.94','0','3421447.5','','','COBRA','','775477.5','0.226651877604435','775477.5','1','','EC H2020','173101.26','245300.56','295004.02','121902.76','0.380415963067916','Desarrollo de herramientas para promover plantas renovables híbridas en continentes e islas',''],
+            	['MOSAIC','Solar','Modular high concentration SolAr Configuration','Sistema termosolar con espejos fijos y receptor móvil','','','','32920056','42644','43709','','','0','5077733.75','','','TEKNIKER','','534987.5','0.105359502159797','534987.5','1','','EC H2020','150737.5','260972.09','180792.66','30055.16','0.337938101357508','Sistema de energía termosolar. Concepto similar a Dish strinling','Nos hemos librado de hacer el prototipo y hemos metido a otro socio. Lo que teníamos pensado gastar del prototipo se lo tenemos que transferir.'],
+            	['MSLOOP 2.0','Solar','Molten Salt Loop 2.0: key element for the new solar thermal energy plants','Lazo de sales parte 2','','','','32920046','42522','43709','','','0','3370175','5','0.2','COBRA','COBRA, CADE, SBP, ARCHIMEDE SOLAR','1573875','0.467000971759627','1101712.5','0.7','','EC FastTrack to Innovation','13212','260249','18573','5361','0.016858300146363','Renovación del lazo de sales. Puesta en marcha y testeo de sales fundidas y estrategias de O&M','No estamos cargando personal de T&I, sólo los de O&M porque vamos justos'],
+            	['eFeCTO','Solar','Sistema de medida de flujo concentrado en centrales de Torre Online','Sistema para medir radiación incidente en receptor de torre, combinando cámaras y sensores puntuales','','','','32920017','42522','43709','CENER/COBRA','0','0','2629447','3','0.333333333333333','COBRA','COBRA, EGATEL, MESUREX + (CENER,AICIA,IMDEA ENERGIA)','1503049','0.571621713615068','601219.6','0.4','','CDTI Innterconecta','27219','-164172.47','-43182.96','-70401.96','-7.18256024920013E-02','Sistema de medición de radiación incidente en receptores de termosolar','Nos han quitado de la justificación 141.000€, está en reclamación. El CDTI nos ha rechazado los partes de horas del hito 2, lo hemos alegado y pensamos en presentar un contencioso-administrativo si no las aprueban.'],
+            	['MUSTEC','Sistema Eléctrico','Market uptake of Solar Thermal Electricity through Cooperation','Exportar termosolar del Sur al norte de Europa','LCE-21-2017','CSA','42740.7083333333','32920027','42856','44025','','','0','2405706.25','9','0.111111111111111','CIEMAT','CIEMAT, University of Piraeus, EIDGENOESSISCHE TECHNISCHE HOCHSCHULE ZURICH, TECHNISCHE UNIVERSITAET WIEN, ESTELA, COBRA, FRAUNHOFER, CSIC, Real Instituto Elcano','135875','5.64802955473055E-02','135875','1','','EC H2020','25375','61506.96','46388.21','21013.21','0.341403569457222','Evaluar el mercado de termosolar. Barres/Oportunidades. Exportar electricidad termosolar desde el sur al norte de europa. Cobra sólo aporta alguna info sobre sus proyectos de termosolar, protegiendo información sensible',''],
+            	['CROSSBOW','Sistema Eléctrico','CROSS BOrder management of variable renewable energies and storage units enabling a transnational Wholesale market','','LCE-04-2017','IA','42780.7083333333','32920057','43040','44470','','','0','22055977','24','4.16666666666667E-02','ETRA I+D','ETRA I+D, CENTRUL ROMAN AL ENERGIEI - CRE , TRANSELECTRICA , INSTITUTE OF COMMUNICATION AND COMPUTER SYSTEMS , INDEPENDENT POWER TRANSMISSION OPERATOR , DIACHEIRISTIS ELLINIKOU DIKTYOU DIANOMIS ELEKTRIKIS ENERGEIAS , PUBLIC POWER CORPORATION, COBRA, VARTA STORAGE, ELEKTROENERGIEN SYSTEMEN OPERATOR , J.P. Elektromreza Srbije , Security Coordination Centre, Nezavisni Operator sistema u BiH, UNIVERSITY OF MANCHESTER, HEP - OPERATOR PRIJENOSNOG SUSTAVA, KONCAR, SVEUCILISTE U ZAGREBU FAKULTET ELEKTROTEHNIKE I RACUNARSTVA , UNIVERZA V LJUBLJANI , ELPROS ELEKTRONSKI IN PROGRAMSKI SISTEMI , Crnogorski elektroprenosni sistem, OPERATOR NA ELEKTROPRENOSNIOT SISTEM NA MAKEDONIJA, Ss. CYRIL AND METHODIUS UNIVERSITY IN SKOPJE, AD Elektrani na Makedonija Skopje - Direkcija , CYBERGRID','1021250','4.63026416830232E-02','714875','0.7','','EC H2020','54638.91','299091.3','67775.67','13136.76','9.48077216296555E-02','Uso de energías renovables y baterías para generación y favorecer el intercambio de electricidad en países del sur-este de europa',''],
+            	['STAGE-STE','Solar','Scientific and Technological Alliance for Guaranteeing the European Excellence in Concentrating Solar Thermal Energy','','','CSA','','32920046','42036','42400','','','1','21134658.37','44','2.27272727272727E-02','','','80776.8','3.82200642119961E-03','6500','8.04686494141882E-02','','EC H2020','Se acordó que los 6500€ se metían en la OT de MSLOOP 2.0','','','0','0','Establecer los objetivos de la termosolar para favorecer empresas europeas (UNIVERSIDADES, EMPRESAS, ESTELA) Impulsar desarrollo. COBRA: Estar atentos al sector, sin participación activa','El margen va a MSLOOP'],
+            	['FLOTANT','Eólica Offshore','Innovative, low cost, low weight and safe floating wind technology optimized for deep water wind sites','Optimizar estructura flotante, mooring, anchoring, cable dinámico y sistema de evacuación de energía','LC-SC3-RES-11-2018','RIA','43340.7083333333','32920029','43556','44805','AIMPLAS/COBRA/PLOCAN','0','0','4951135','17','5.88235294117647E-02','PLOCAN','PLOCAN, UNIVERSITY OF EXETER, UNIVERSITY OF EDINBURGH, AIMPLAS, RHEINISCH-WESTFAELISCHE TECHNISCHE HOCHSCHULE AACHEN, STICHTING MARITIEM RESEARCH INSTITUUT NEDERLAND, TECHNOLOGY FROM IDEAS, ESTEYCO, INNOSEA, INEA INFORMATIZACIJA ENERGETIKA AVTOMATIZACIJA, Transmission Excellence, HYDRO BOND ENGINEERING, Fulgor, Adria Winch, Guture Fibers Rigging, COBRA, BUREAU VERITAS MARINE & OFFSHORE','419088','8.46448339623137E-02','419088','1','','EC H2020','51088','152619.75','73572.55','22484.55','0.175553940938419','Cobra es coordinadro técnico del proyecto, supervisión técnica y liderar WP8: IPR, Explotación y modelo de negocio.',''],
+            	['MERLON','Sistema Eléctrico','Integrated Modular Energy Systems and Local Flexibility Trading for Neural Energy Islands','Intercambio de energía a nivel DSO','LC-SC3-ES-3-2018-2020','IA','43195.7083333333','32920039','43435','44531','','','0','7551058.75','13','7.69230769230769E-02','HYPERTECH','HYPERTECH, ATOS Spain, IMPERIAL COLLEGE, COBRA, SUITE5 DATA INTELLIGENCE, ENERGIE GUSSING, SOREA, EURPAISCHES ZENTRUN FUR ENRENEUERBARE ENERGIE GUSSING, MERTIT CONSULTING, XOROTEXNIKI, UNIVERSITY OF NEWCASTLE, UNIVERSITY OF PELOPNESE, India Smart Grid','736250','9.75028832877244E-02','515375','0.7','','EC H2020','7875','183666.67','18250','10375','3.54111084162018E-02','El proyecto MERLON propone la integración de almacenamiento eléctrico en baterías con tecnologías renovables para la optimización del sistema energético. COBRA lidera la ingeniería de diseño de las soluciones de almacenamiento, desarrolla el software de control y realiza su operación conectada a la red.',''],
+            	['COREWIND','Eólica Offshore','Cost reduction and increase performance of floating wind technology','','LC-SC3-RES-11-2018','RIA','43340.7083333333','32920059','43344','44958','','','0','5053933.75','13','7.69230769230769E-02','IREC','IREC, DTU, INNOSEA, JDR Cable, RAMBOLL IMS INGENIEURGESELLSCHAFT, IHC, UL INTERNATIONAL, WindEurope, Politecnico di milano, Universitat politecnica de Catalunya, Equinor, COBRA, Universitaet Stuttgart','378125','7.48179573980367E-02','378125','1','','EC H2020','14050','183666.67','18250','4200','4.82644628099174E-02','Reducir los costes mediante el desarrollo de soluciones de anchoring, mooring, dynamic cable y estrategías de O&M en parques eólicos flotantes. Rol COBRA: Desarrollar el flotador semi-submergible hasta un TRL5 para grandes turbinas 15MW (test en piscina)',''],
+            	['Watereye','Eólica Offshore','O&M tools integrating accurate structural health in Offshore Energy','Medición corrosión en Wind Offshore','LC-SC3-RES-14-2019','RIA','43580.7083333333','','43770','44866','CEIT/ZABALA','5738.26','-1','4709368.75','9','0.111111111111111','CEIT-IK4','CEIT-IK4, Delft Dynamics, SEMANTIC WEB, TECHNISCHE UNIVERSITEIT DELFT, SINTEF ENERGI, SINTEF, FLANDERS MAKE, COBRA, PLOCAN','259375','5.50763836448356E-02','259375','1','','EC H2020','34436.74','0','34436.74','0','0.132768154216867','Hemos firmado declaración de honor, falta actualizar CF y aprobar con Alberto Sanz',''],
+            	['BaLiHT','Baterías','Development of full lignin based organic redox flow battery suitable to work in warm environments and heavy multicycle uses.','Instalación de batería Redox en Puerto','LC-BAT-4-2019','RIA','43580.7083333333','','43770','44866','AIMPLAS','0','-1','4098552.5','12','8.33333333333333E-02','AIMPLAS','AIMPLAS, CMBlu, COBRA, MANN + HUMMEL, SCHUNK KOHLENSTOFF-TECHNIK, UNIVERSITEIT LEUVEN, KONCAR, TECNODIMENSION, UNIVERSITEIT LEIDEN, ALIENOREU, ETRA I+D, AUTORIDAD PORTUARIA DE BALEARES','310500','7.57584537467801E-02','310500','1','','EC H2020','','0','','0','0','',''],
+            	['SYNERGY','Solar','','Big data para el O&M de PV','DT-ICT-11-2019','IA','43557.7083333333','','43831','44927','SUITE5','','-1','12738950','24','4.16666666666667E-02','ETRA I+D','ETRA I+D, HEDNO, ICCS, FORUM VIRIUM (RadioJatelevisio), VTT, Montajes Eléctricos Cuerva, COBRA, SUITE5, URBENER, CIRCE, UBITECH, CAVERION, IPTO/ADMIE, ATTIKI, PONIKVE, MAGGIOLI, KOWLEDGEBIZ, KONCAR, Ucyprus, VERD, Energie Gussing, EEE Gussing, Geco Global, Energy Services Hadels','690625','5.42136518315874E-02','483437.5','0.7','','EC H2020','','','','0','0','Desarrollar un sistema de mantenitimiento predictivo con BigData para las plantas PV','Aún no ha comenzado oficialmente, pero nos han aprobado el proyecto'],
+            	['Deducciones fiscales','','','','','','','32920028','','','','','','','','','','','','','','','','','','','','','','OT para colección de ingresos de deducciones fiscales','']
+            ];
+
+			for (var i=1; i<DATOS.length; i++){
+				$("#lista-proyectos").append('<option value="' + DATOS[i][0] + ' - OT: ' + OTn2code(DATOS[i][7]) + '"></option>');
+			}
+			
+			limpiar();
+		});
+		
+		$( "#caja-buscar" ).change(function() {
+			busqueda();
+		});
+
+		function busqueda(){
+			var contenido = $("#caja-buscar").val();
+			var proyecto = contenido.split(" - ");
+			var nombreProyecto = proyecto[0];
+			$("#contenedor").empty(); // vaciamos el contenedor
+			var texto = "";
+			var cont = 0;
+			for (var i=1; i<DATOS.length; i++){
+				if (DATOS[i][0].toLowerCase().includes(nombreProyecto.toLowerCase())){
+					cont = cont+1;
+					
+					texto += '<div class="proyecto">'; // Abrimos div proyecto *
+					var otcode = OTn2code(DATOS[i][7]);
+					for (var j=0; j<DATOS[0].length; j++){
+						var dato = DATOS[i][j];
+						var cabecera = '<div class="parrafo '; // abrimos div párrafo *
+						if (j==0){ // Para el nombre de proyecto
+							cabecera += 'cabecera' + i + '" onclick="alternarVista(' + i + ');"><div class="float-left">'; // abrimos div float-left *
+							
+							if (otcode!="/"){ // si la OT no está vacía
+								dato += ' <span class="transp">(' + otcode + ')</span>'; // añadimos el nombre de la OT
+							}
+							dato += '<div class="small">'; // abrimos div small *
+							/*for (var z=24; z<=27; z++){
+								dato += ' <span class="transp">' + DATOS[0][z] + ': ' + str2eur(DATOS[i][z]) + '</span>';
+								if ((z % 2)==1){dato += '</br>';}
+							}*/
+							dato += '</div>'; // cerramos div small *
+						}else{
+							cabecera += 'p' + i + '"><b>' + DATOS[0][j] + ':</b> &nbsp; &nbsp; ';
+						}
+						if (j==7){ // OT
+							dato = (otcode=="/") ? "" : otcode;
+						}
+						if ((j==6) || (j==8) || (j==9)){ // FECHAS
+							var dt = new Date((parseFloat(dato)-25569)*86400*1000);
+							dato = dt.toLocaleString();
+							dato = dato.replace("Invalid Date","");
+						}
+						if ((j==15) || (j==19) || (j==21) || (j==28)){ // PORCENTAJES
+							dato = Math.round(parseFloat(dato)*100*100)/100 + "%";
+							dato = dato.replace("NaN%","");
+						}
+						if ((j==11) || (j==13) || (j==18) || (j==20) || (j==22) || (j==24) || (j==25) || (j==26) || (j==27)){ // DINERO
+							dato = str2eur(dato);
+						}
+						
+						texto  += cabecera + dato;
+						if (j==0){
+							texto += '</div>'; // cerramos div float-left *
+							texto += '<div class="float-right">'; // abrimos div float-right; *
+							texto += '<i id="chevron-u' + i + '" class="fa fa-chevron-up"></i><i id="chevron-d' + i + '" class="fa fa-chevron-down"></i></p>';
+							texto += '</div>'; // cerramos div float-right *
+						}
+						texto += '</div>'; // cerramos div parrafo *
+					}
+					texto += '</div>'; // cerramos div proyecto *
+				}
+			}
+			
+			if (texto===""){
+				texto += '<div class="error">No se han encontrado resultados</div>';
+			}
+			$("#contenedor").append(texto);
+			for (var i=1; i<DATOS.length; i++){
+				$('#chevron-d' + i).hide();
+			}
+			if (cont>1){
+				for (var i=1; i<DATOS.length; i++){
+					alternarVista(i);
+				}
+			}
+			$('#caja-buscar').blur();
+		}
+		
+		function limpiar(){
+			$("#caja-buscar").val("");
+			busqueda();
+			$('#caja-buscar').focus();
+		}
+		
+		function alternarVista(cls){
+			$(".p" + cls).toggle();
+			$(".cabecera" + cls).toggleClass("borde-abajo");
+			$("#chevron-d" + cls).toggle();
+			$("#chevron-u" + cls).toggle();
+		}
+		
+		function OTn2code(otnumber){
+			otnumber = otnumber.toString();
+			return (otnumber.substring(0,4) + '/' + otnumber.substring(4,8));
+		}
+		
+		function str2eur(nStr){
+			nStr = parseFloat(nStr);
+			if (isNaN(nStr)){
+				f = '0.00&nbsp;&euro;';
+			}else{
+				nStr = nStr.toFixed(2);
+				x = nStr.split('.');
+				x1 = x[0];
+				x2 = x.length > 1 ? ',' + x[1] : '';
+				var rgx = /(\d+)(\d{3})/;
+				while (rgx.test(x1)) {
+						x1 = x1.replace(rgx, '$1' + '.' + '$2');
+				}
+				f = x1 + x2 + '&nbsp;&euro;';
+			}
+			return f;
+		}
+		
+		</script>
+	</body>
+</html>
